@@ -22,7 +22,7 @@ public class CategoryRepository
                 {
                     Title = "StackLayout",
                     Description = "Organização sequencial dos elementos.",
-                    Page = new StackLayoutPage()
+                    Page = typeof(StackLayoutPage)
                 }
             }
         });
