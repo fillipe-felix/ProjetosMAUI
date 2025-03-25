@@ -4,15 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AppMAUIGallery.Views;
+namespace AppMAUIGallery.Views.Layouts;
 
-public partial class Menu : ContentPage
+public partial class StackLayoutPage : ContentPage
 {
-    public Menu()
+    public StackLayoutPage()
     {
         InitializeComponent();
-        
-        
     }
 }
 
