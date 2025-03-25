@@ -57,14 +57,10 @@
 
         <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
         <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)"/>
-        <None Remove="Resources\AppIcon\appicon.svg" />
-        <MauiIcon Include="Resources\AppIcon\appicon.svg" />
         <None Remove="Resources\AppIcon\appiconfg.svg" />
         <MauiIcon Include="Resources\AppIcon\appiconfg.svg" />
         <None Remove="Resources\AppIcon\appiconfg_android.svg" />
         <MauiIcon Include="Resources\AppIcon\appiconfg_android.svg" />
-        <None Remove="Resources\Splash\splash.svg" />
-        <MauiSplashScreen Include="Resources\Splash\splash.svg" />
     </ItemGroup>
 
     <ItemGroup>
