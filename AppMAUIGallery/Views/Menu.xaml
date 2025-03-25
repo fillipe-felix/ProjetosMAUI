@@ -1,19 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 
 <ContentPage
-    Title="Menu"
+    BackgroundColor="#F3F3F3"
+    Padding="20"
+    Title="MAUI Gallery"
     x:Class="AppMAUIGallery.Views.Menu"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <VerticalStackLayout>
-        <Label Text="NET MAUI - Gallery" />
+    <VerticalStackLayout Spacing="10">
+        <Label
+            FontFamily="OpenSansSemibold"
+            FontSize="24"
+            HorizontalOptions="Center"
+            Margin="30"
+            Text="MAUI Gallery" />
         <Label Text="Início" />
         <Label Text="Extra" />
         <Label Text="Créditos" />
 
-        <Label Text="Layout" />
-        <Label Text="StackLayout" />
-        <Label Text="Bla bla bla" />
+        <VerticalStackLayout Margin="0,10,0,0" x:Name="MenuContainer" />
     </VerticalStackLayout>
 </ContentPage>
