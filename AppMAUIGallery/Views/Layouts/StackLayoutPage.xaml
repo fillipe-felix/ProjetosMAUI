@@ -6,11 +6,39 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Margin="20"
-            Text="Pagina do StackLayout"
-            VerticalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout
+        BackgroundColor="AliceBlue"
+        Margin="20"
+        Padding="20"
+        Spacing="10">
+        <Label BackgroundColor="Gray" Text="Olá mundo" />
+        <Button
+            HeightRequest="100"
+            HorizontalOptions="Start"
+            Text="Olá mundo"
+            WidthRequest="200" />
+        <StackLayout
+            BackgroundColor="Gray"
+            Orientation="Horizontal"
+            Spacing="10">
+            <Button HorizontalOptions="End" Text="Olá mundo 1" />
+            <Button HorizontalOptions="End" Text="Olá mundo 2" />
+        </StackLayout>
+
+        <VerticalStackLayout
+            BackgroundColor="Aquamarine"
+            Padding="10"
+            Spacing="10">
+            <Label Text="Ola mundo 1" />
+            <Label Text="Ola mundo 2" />
+        </VerticalStackLayout>
+
+        <HorizontalStackLayout
+            BackgroundColor="Aquamarine"
+            Padding="10"
+            Spacing="20">
+            <Label Text="Ola mundo 1" />
+            <Label Text="Ola mundo 2" />
+        </HorizontalStackLayout>
+    </StackLayout>
 </ContentPage>
