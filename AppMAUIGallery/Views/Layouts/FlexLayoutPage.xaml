@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Layouts.FlexLayoutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <FlexLayout
+        AlignItems="Start"
+        Direction="Column"
+        JustifyContent="SpaceBetween">
+        <Label
+            BackgroundColor="RosyBrown"
+            FlexLayout.Grow="0"
+            FlexLayout.Order="1"
+            Padding="10"
+            Text="Bem vindo 1" />
+
+        <Label
+            BackgroundColor="SandyBrown"
+            FlexLayout.AlignSelf="Center"
+            FlexLayout.Basis="10%"
+            FlexLayout.Order="0"
+            Padding="10"
+            Text="Bem vindo 2" />
+
+        <Label
+            BackgroundColor="SaddleBrown"
+            FlexLayout.AlignSelf="End"
+            FlexLayout.Order="3"
+            Padding="10"
+            Text="Bem vindo 3" />
+
+        <Label
+            BackgroundColor="Brown"
+            FlexLayout.AlignSelf="Stretch"
+            FlexLayout.Order="2"
+            Padding="10"
+            Text="Bem vindo 4" />
+
+        <Label
+            BackgroundColor="Red"
+            Padding="10"
+            Text="Bem vindo 5" />
+    </FlexLayout>
+</ContentPage>
