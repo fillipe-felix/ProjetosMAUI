@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Mains.ButtonPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="10">
+        <Label x:Name="LblLog" />
+
+        <Button
+            BorderColor="Red"
+            BorderWidth="1"
+            Clicked="Button_OnClicked"
+            ContentLayout="Left, 10"
+            CornerRadius="25"
+            FontAttributes="Bold"
+            FontSize="20"
+            HeightRequest="44"
+            HorizontalOptions="Center"
+            ImageSource="dotnet_bot.pngt"
+            Pressed="Button_OnPressed"
+            Released="Button_OnReleased"
+            Text="Clique-me"
+            TextColor="Red"
+            TextTransform="Uppercase" />
+    </VerticalStackLayout>
+</ContentPage>
