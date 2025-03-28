@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTabbedPage", "AppTabbedP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppMAUIGallery", "AppMAUIGallery\AppMAUIGallery.csproj", "{7FB1B5F9-FF44-404D-9C0D-EA73C89B622A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppJogoForca", "AppJogoForca\AppJogoForca.csproj", "{C2EF191D-BBF0-4464-AEFD-9639894A1113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{7FB1B5F9-FF44-404D-9C0D-EA73C89B622A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FB1B5F9-FF44-404D-9C0D-EA73C89B622A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FB1B5F9-FF44-404D-9C0D-EA73C89B622A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2EF191D-BBF0-4464-AEFD-9639894A1113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2EF191D-BBF0-4464-AEFD-9639894A1113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2EF191D-BBF0-4464-AEFD-9639894A1113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2EF191D-BBF0-4464-AEFD-9639894A1113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
