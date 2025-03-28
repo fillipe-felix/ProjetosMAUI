@@ -17,8 +17,9 @@ public partial class MainPage : ContentPage
 
     private async void OnButtonClicked(object sender, EventArgs e)
     {
-        ((Button)sender).IsEnabled = false;
-        var clickedLetter = ((Button)sender).Text;
+        Button button = (Button)sender;
+        button.IsEnabled = false;
+        var clickedLetter = button.Text;
         var updatedText = LblText.Text.ToCharArray();
         bool found = false;
 
@@ -28,11 +29,13 @@ public partial class MainPage : ContentPage
             {
                 updatedText[i] = _currentWord.Text[i];
                 found = true;
+                button.Style = (Style)Application.Current.Resources["Success"];
             }
         }
 
         if (!found)
         {
+            button.Style = (Style)Application.Current.Resources["Fail"];
             _errors++;
             var nameImage = $"forca{_errors + 1}.png";
             ImgMain.Source = ImageSource.FromFile(nameImage);
@@ -85,6 +88,7 @@ public partial class MainPage : ContentPage
                     {
                         // Reativa o botão
                         button.IsEnabled = true;
+                        button.Style = null;
                     }
                 }
             }
