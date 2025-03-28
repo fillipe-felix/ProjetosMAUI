@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Mains.ImagePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout>
+        <Image
+            Aspect="Center"
+            BackgroundColor="Gray"
+            Source="dotnet_bot.png" />
+
+        <Image Source="https://cdn.motor1.com/images/mgl/6ZoE2e/s1/ferrari-f80.webp" />
+    </VerticalStackLayout>
+</ContentPage>

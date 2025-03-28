@@ -68,6 +68,18 @@ public class CategoryRepository
                     Title = "Button",
                     Description = "Apresenta um botão na tela.",
                     Page = typeof(ButtonPage)
+                },
+                new Component
+                {
+                    Title = "Image",
+                    Description = "Apresenta uma imagem na tela.",
+                    Page = typeof(ImagePage)
+                },
+                new Component
+                {
+                    Title = "ImageButton",
+                    Description = "Apresenta uma imagem com comportamento de botão.",
+                    Page = typeof(ImageButtonPage)
                 }
             }
         });
