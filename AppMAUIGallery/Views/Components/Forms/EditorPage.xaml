@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.EditorPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--  Estilo básico para Editor  -->
+            <Style TargetType="Editor" x:Key="BaseEditorStyle">
+                <Setter Property="BackgroundColor" Value="LightYellow" />
+                <Setter Property="TextColor" Value="DarkBlue" />
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="HeightRequest" Value="100" />
+            </Style>
+
+            <!--  Estilo para Border que conterá o Editor  -->
+            <Style TargetType="Border" x:Key="RoundedBorderStyle">
+                <Setter Property="StrokeShape" Value="RoundRectangle 15,15,15,15" />
+                <Setter Property="Stroke" Value="#CCCCCC" />
+                <Setter Property="StrokeThickness" Value="1" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15">
+            <!--  Editor básico com placeholder e cor  -->
+            <Editor
+                BackgroundColor="LightCyan"
+                HeightRequest="100"
+                Placeholder="Digite seu texto aqui..."
+                PlaceholderColor="Gray"
+                TextColor="Navy" />
+
+            <!--  Editor com bordas personalizadas  -->
+            <Editor
+                BackgroundColor="AliceBlue"
+                HeightRequest="100"
+                Margin="2"
+                Placeholder="Editor com borda" />
+
+            <!--  Editor somente leitura  -->
+            <Editor
+                BackgroundColor="LightGray"
+                HeightRequest="100"
+                IsReadOnly="True"
+                Text="Este editor é somente leitura"
+                TextColor="DimGray" />
+
+            <!--  Editor com contagem de caracteres  -->
+            <VerticalStackLayout>
+                <Editor
+                    HeightRequest="100"
+                    MaxLength="200"
+                    Placeholder="Editor com contagem de caracteres"
+                    TextChanged="OnEditorTextChanged"
+                    x:Name="countedEditor" />
+                <Label
+                    FontSize="12"
+                    HorizontalOptions="End"
+                    Text="0/200 caracteres"
+                    TextColor="Gray"
+                    x:Name="characterCountLabel" />
+            </VerticalStackLayout>
+
+            <!--  Editor com controle de foco  -->
+            <Editor
+                Focused="OnEditorFocused"
+                HeightRequest="100"
+                Placeholder="Clique aqui e observe o foco"
+                Unfocused="OnEditorUnfocused" />
+
+            <!--  Editor com validação de entrada  -->
+            <VerticalStackLayout>
+                <Editor
+                    HeightRequest="100"
+                    Placeholder="Digite um e-mail válido"
+                    TextChanged="OnValidateEmail"
+                    x:Name="validationEditor" />
+                <Label
+                    IsVisible="false"
+                    TextColor="Red"
+                    x:Name="validationLabel" />
+            </VerticalStackLayout>
+
+            <!--  Editor com comportamento personalizado de teclado  -->
+            <Editor
+                HeightRequest="100"
+                Keyboard="Email"
+                Placeholder="Editor com teclado de e-mail" />
+
+            <!--  Editor com fonte personalizada  -->
+            <Editor
+                FontAttributes="Italic"
+                FontFamily="Courier New"
+                FontSize="16"
+                HeightRequest="100"
+                Text="Editor com fonte personalizada"
+                TextColor="DarkGreen" />
+
+            <!--  Uso dos styles  -->
+            <Editor Placeholder="Editor com estilo básico" Style="{StaticResource BaseEditorStyle}" />
+
+            <Border Style="{StaticResource RoundedBorderStyle}">
+                <Editor BackgroundColor="Transparent" Placeholder="Editor com borda arredondada" />
+            </Border>
+
+            <!--  Editor com limite de caracteres  -->
+            <Editor
+                HeightRequest="100"
+                MaxLength="200"
+                Placeholder="Editor com limite de 200 caracteres" />
+
+            <!--  Editor com comportamento personalizado de teclado  -->
+            <Editor
+                HeightRequest="100"
+                Keyboard="Email"
+                Placeholder="Editor com teclado de e-mail" />
+
+
+            <!--  Editor com auto-crescimento  -->
+            <Editor
+                AutoSize="TextChanges"
+                MaxLength="500"
+                Placeholder="Este editor cresce automaticamente" />
+
+            <!--  Editor com margens internas  -->
+            <Editor
+                HeightRequest="100"
+                Margin="0,10,0,10"
+                Placeholder="Editor com padding" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+
+</ContentPage>
