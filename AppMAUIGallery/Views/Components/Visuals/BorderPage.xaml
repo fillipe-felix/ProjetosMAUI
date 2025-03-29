@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Visuals.BorderPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout Padding="10">
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeDashArray="1,1,3,1,5,2"
+            StrokeDashOffset="1"
+            StrokeLineCap="Round"
+            StrokeLineJoin="Round"
+            StrokeThickness="10">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeDashArray="1,1,3,1,5,2"
+            StrokeDashOffset="1"
+            StrokeLineJoin="Round"
+            StrokeThickness="5">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeDashArray="1,1"
+            StrokeDashOffset="1"
+            StrokeLineJoin="Round"
+            StrokeThickness="5">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeDashArray="1,1"
+            StrokeDashOffset="1"
+            StrokeLineCap="Round"
+            StrokeLineJoin="Round"
+            StrokeThickness="5">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeDashOffset="1"
+            StrokeLineJoin="Bevel"
+            StrokeThickness="10">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeShape="RoundRectangle 5, 10, 15, 20"
+            StrokeThickness="5">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+
+        <Border
+            Padding="10"
+            Stroke="Blue"
+            StrokeShape="Ellipse"
+            StrokeThickness="5">
+            <Label
+                HorizontalOptions="Center"
+                Text="Bem vindo"
+                VerticalOptions="Center" />
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>

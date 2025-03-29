@@ -95,8 +95,13 @@ public class CategoryRepository
                     Title = "Frame",
                     Description = "Caixa que envolve outros elementos.",
                     Page = typeof(FramePage)
+                },
+                new Component
+                {
+                    Title = "Border",
+                    Description = "Caixa que envolve outros elementos.",
+                    Page = typeof(BorderPage)
                 }
-
             }
         });
         
