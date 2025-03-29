@@ -1,5 +1,6 @@
 ﻿using AppMAUIGallery.Models;
 using AppMAUIGallery.Views.Components.Mains;
+using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
 
 namespace AppMAUIGallery.Repositories;
@@ -81,6 +82,21 @@ public class CategoryRepository
                     Description = "Apresenta uma imagem com comportamento de botão.",
                     Page = typeof(ImageButtonPage)
                 }
+            }
+        });
+
+        categories.Add(new Category
+        {
+            Name = "Visuais",
+            Components = new List<Component>
+            {
+                new Component
+                {
+                    Title = "Frame",
+                    Description = "Caixa que envolve outros elementos.",
+                    Page = typeof(FramePage)
+                }
+
             }
         });
         
