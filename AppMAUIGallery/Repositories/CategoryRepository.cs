@@ -101,6 +101,12 @@ public class CategoryRepository
                     Title = "Border",
                     Description = "Caixa que envolve outros elementos.",
                     Page = typeof(BorderPage)
+                },
+                new Component
+                {
+                    Title = "Shadow",
+                    Description = "Adiciona uma sombra ao elemento.",
+                    Page = typeof(ShadowPage)
                 }
             }
         });
