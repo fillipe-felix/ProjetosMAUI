@@ -7,6 +7,13 @@
 
     <ScrollView>
         <FlexLayout Direction="Column" JustifyContent="SpaceBetween">
+            <Button
+                BorderColor="Black"
+                BorderWidth="1"
+                Clicked="OnButtonClickedResetGame"
+                HorizontalOptions="Center"
+                Margin="0,10,0,0"
+                Text="Reiniciar" />
             <Image
                 Aspect="AspectFit"
                 HeightRequest="185"

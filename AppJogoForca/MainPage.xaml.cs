@@ -35,21 +35,51 @@ public partial class MainPage : ContentPage
 
         if (!found)
         {
-            button.Style = (Style)Application.Current.Resources["Fail"];
-            _errors++;
-            var nameImage = $"forca{_errors + 1}.png";
-            ImgMain.Source = ImageSource.FromFile(nameImage);
-         
-            if (_errors == 6)
-            {
-                await DisplayAlert("Perdeu", "Você foi enforcado!", "Novo jogo");
-                ResetScreen();
-            }
-            
+            ErrorHandler(button);
+            await IsGameOver();
             return;
         }
 
+        ReplaceLetter(updatedText);
+
+        await HasWinner();
+    }
+
+    #region Verify if game finished
+
+    private async Task IsGameOver()
+    {
+        if (_errors == 6)
+        {
+            await DisplayAlert("Perdeu", "Você foi enforcado!", "Novo jogo");
+            ResetScreen();
+        }
+    }
+    
+    private async Task HasWinner()
+    {
+        if (!LblText.Text.Contains("_"))
+        {
+            await DisplayAlert("Parabéns", "Você ganhou o jogo!", "Novo jogo");
+            ResetScreen();
+        }
+    }
+
+    #endregion
+
+    #region ResetScreen - Back Screen to Initial State
+
+    private void ReplaceLetter(char[] updatedText)
+    {
         LblText.Text = new string(updatedText);
+    }
+
+    private void ErrorHandler(Button button)
+    {
+        button.Style = (Style)Application.Current.Resources["Fail"];
+        _errors++;
+        var nameImage = $"forca{_errors + 1}.png";
+        ImgMain.Source = ImageSource.FromFile(nameImage);
     }
 
     private void ResetScreen()
@@ -94,5 +124,12 @@ public partial class MainPage : ContentPage
             }
         }
 
+    }
+
+    #endregion
+
+    private void OnButtonClickedResetGame(object? sender, EventArgs e)
+    {
+        ResetScreen();
     }
 }
