@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.CheckBoxPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Customizações do CheckBox" />
+
+            <!--  1. CheckBox Padrão  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="1. CheckBox Padrão" />
+                <CheckBox IsChecked="true" />
+            </VerticalStackLayout>
+
+            <!--  2. Cores Personalizadas  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="2. Cores Personalizadas" />
+                <CheckBox Color="Red" />
+                <CheckBox Color="#FF5733" />
+                <CheckBox Color="Green" />
+                <CheckBox Color="Blue" />
+            </VerticalStackLayout>
+
+            <!--  3. CheckBox com Label associado  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="3. CheckBox com Label" />
+                <HorizontalStackLayout Spacing="10">
+                    <CheckBox x:Name="termsCheckBox" />
+                    <Label Text="Eu aceito os termos e condições" VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <!--  4. Evento CheckedChanged  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="4. Resposta a Eventos" />
+                <CheckBox CheckedChanged="OnCheckChanged" />
+                <Label Text="Status: Não marcado" x:Name="statusLabel" />
+            </VerticalStackLayout>
+
+            <!--  5. Desabilitado  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="5. Estado Desabilitado" />
+                <CheckBox IsEnabled="False" />
+                <CheckBox IsChecked="True" IsEnabled="False" />
+            </VerticalStackLayout>
+
+            <!--  6. Com Binding  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="6. Com Data Binding" />
+                <CheckBox IsChecked="{Binding IsAccepted}" />
+            </VerticalStackLayout>
+
+            <!--  7. Com Visual States (requer código por trás)  -->
+            <!-- <VerticalStackLayout Spacing="10"> -->
+            <!--     <Label FontAttributes="Bold" Text="7. Com Visual States" /> -->
+            <!--     <CheckBox x:Name="visualStatesCheckBox"> -->
+            <!--         <VisualStateManager.VisualStateGroups> -->
+            <!--             <VisualStateGroup Name="CommonStates"> -->
+            <!--                 <VisualState Name="Normal"> -->
+            <!--                     <VisualState.Setters> -->
+            <!--                         <Setter Property="Color" Value="Purple" /> -->
+            <!--                     </VisualState.Setters> -->
+            <!--                 </VisualState> -->
+            <!--                 <VisualState Name="IsChecked"> -->
+            <!--                     <VisualState.Setters> -->
+            <!--                         <Setter Property="Color" Value="Orange" /> -->
+            <!--                     </VisualState.Setters> -->
+            <!--                 </VisualState> -->
+            <!--             </VisualStateGroup> -->
+            <!--         </VisualStateManager.VisualStateGroups> -->
+            <!--     </CheckBox> -->
+            <!-- </VerticalStackLayout> -->
+
+            <!--  8. Com Frame ao redor  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="8. Com Frame Decorativo" />
+                <Frame
+                    BorderColor="Gray"
+                    CornerRadius="8"
+                    Padding="10">
+                    <HorizontalStackLayout>
+                        <CheckBox Color="DarkBlue" />
+                        <Label
+                            Text="Opção em um Frame"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </Frame>
+            </VerticalStackLayout>
+
+            <!--  9. Tamanho Personalizado (via escala)  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="9. Tamanho Personalizado" />
+                <CheckBox Color="Purple" Scale="1.5" />
+            </VerticalStackLayout>
+
+            <!--  10. Grupo de CheckBox  -->
+            <VerticalStackLayout Spacing="10">
+                <Label FontAttributes="Bold" Text="10. Grupo de CheckBox" />
+                <Label Text="Selecione seus interesses:" />
+                <HorizontalStackLayout Spacing="5">
+                    <CheckBox CheckedChanged="CheckBox_OnCheckedChanged" />
+                    <Label Text="Esportes" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="5">
+                    <CheckBox CheckedChanged="CheckBox_OnCheckedChanged" />
+                    <Label Text="Música" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+                <HorizontalStackLayout Spacing="5">
+                    <CheckBox CheckedChanged="CheckBox_OnCheckedChanged" />
+                    <Label Text="Tecnologia" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <Label x:Name="LblInteresse" />
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
