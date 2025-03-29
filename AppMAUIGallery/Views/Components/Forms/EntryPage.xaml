@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.EntryPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <Label
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Digite seu nome: " />
+            <Entry Text="Fillipe" TextColor="Red" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="Exemplos de Entry Customizados" />
+
+            <!--  Entry básico  -->
+            <Label FontAttributes="Bold" Text="Entry básico:" />
+            <Entry Placeholder="Digite seu nome aqui" />
+
+            <!--  Entry com texto predefinido  -->
+            <Label FontAttributes="Bold" Text="Entry com texto predefinido:" />
+            <Entry Placeholder="Digite seu nome aqui" Text="João Silva" />
+
+            <!--  Entry com cores customizadas  -->
+            <Label FontAttributes="Bold" Text="Entry com cores customizadas:" />
+            <Entry
+                BackgroundColor="LightCyan"
+                Placeholder="Digite seu email"
+                PlaceholderColor="Gray"
+                TextColor="DarkBlue" />
+
+            <!--  Entry com senha  -->
+            <Label FontAttributes="Bold" Text="Entry para senha:" />
+            <Entry IsPassword="True" Placeholder="Digite sua senha" />
+
+            <!--  Entry somente leitura  -->
+            <Label FontAttributes="Bold" Text="Entry somente leitura:" />
+            <Entry IsReadOnly="True" Text="Texto não editável" />
+
+            <!--  Entry com tamanho e alinhamento  -->
+            <Label FontAttributes="Bold" Text="Entry com tamanho e alinhamento:" />
+            <Entry
+                FontSize="18"
+                HeightRequest="60"
+                HorizontalTextAlignment="Center"
+                Placeholder="Texto centralizado" />
+
+            <!--  Entry com limite de caracteres  -->
+            <Label FontAttributes="Bold" Text="Entry com limite de caracteres (máx: 10):" />
+            <Entry MaxLength="10" Placeholder="Máximo 10 caracteres" />
+
+            <!--  Entry com teclado específico  -->
+            <Label FontAttributes="Bold" Text="Entry com teclado numérico:" />
+            <Entry Keyboard="Numeric" Placeholder="Digite somente números" />
+
+            <!--  Entry com teclado para telefone  -->
+            <Label FontAttributes="Bold" Text="Entry para telefone:" />
+            <Entry Keyboard="Telephone" Placeholder="(00) 00000-0000" />
+
+            <!--  Entry com teclado para email  -->
+            <Label FontAttributes="Bold" Text="Entry para email:" />
+            <Entry Keyboard="Email" Placeholder="exemplo@email.com" />
+
+
+            <!--  Entry com borda customizada  -->
+            <Label FontAttributes="Bold" Text="Entry com estilo customizado:" />
+            <Border
+                BackgroundColor="Black"
+                Padding="0"
+                Stroke="Purple"
+                StrokeShape="RoundRectangle 5">
+                <Entry
+                    BackgroundColor="Transparent"
+                    Margin="10,0"
+                    Placeholder="Entry com borda customizada"
+                    TextColor="White" />
+            </Border>
+
+            <!--  Entry com ícone  -->
+            <Label FontAttributes="Bold" Text="Entry com ícone:" />
+            <Grid ColumnDefinitions="Auto,*">
+                <Image
+                    HeightRequest="20"
+                    Margin="5,0,0,0"
+                    Source="poweron.png"
+                    VerticalOptions="Center"
+                    WidthRequest="20" />
+                <Entry
+                    Grid.Column="1"
+                    Margin="5,0,0,0"
+                    Placeholder="Pesquisar..." />
+            </Grid>
+
+            <!--  Entry com sugestão de preenchimento  -->
+            <Label FontAttributes="Bold" Text="Entry com preenchimento automático:" />
+            <Entry
+                IsSpellCheckEnabled="True"
+                IsTextPredictionEnabled="True"
+                Placeholder="Digite seu endereço" />
+
+            <!--  Entry com formatação de capitalização  -->
+            <Label FontAttributes="Bold" Text="Entry com capitalização de palavras:" />
+            <Entry
+                Keyboard="Text"
+                Placeholder="Cada palavra com maiúscula"
+                TextTransform="Uppercase" />
+
+            <!--  Entry com ClearButton  -->
+            <Label FontAttributes="Bold" Text="Entry com botão de limpar:" />
+            <Entry ClearButtonVisibility="WhileEditing" Placeholder="Com botão para limpar" />
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Center"
+                Text="Exemplos de Entry com eventos" />
+
+            <Label
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                Text="Digite seu nome: " />
+            <Entry TextChanged="InputView_OnTextChanged" Completed="Entry_OnCompleted" TextColor="Red" />
+            <Label x:Name="LblText" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

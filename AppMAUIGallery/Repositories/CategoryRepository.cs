@@ -1,4 +1,5 @@
 ﻿using AppMAUIGallery.Models;
+using AppMAUIGallery.Views.Components.Forms;
 using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
 using AppMAUIGallery.Views.Layouts;
@@ -110,6 +111,21 @@ public class CategoryRepository
                 }
             }
         });
+
+        categories.Add(new Category
+        {
+            Name = "Formulários",
+            Components = new List<Component>
+            {
+                new Component
+                {
+                    Title = "Entry",
+                    Description = "Cria uma caixa de entrada de texto.",
+                    Page = typeof(EntryPage)
+                }
+            }
+        });
+                
         
         return categories;
     }
