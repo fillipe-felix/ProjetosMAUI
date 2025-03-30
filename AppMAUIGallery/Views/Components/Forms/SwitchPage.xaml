@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.SwitchPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"
+                Text="Exemplos de Customização de Switch" />
+            <!--  Switch padrão  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch Padrão" />
+                    <Switch IsToggled="False" />
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com cores customizadas  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Cores Customizadas" />
+                    <Switch
+                        IsToggled="True"
+                        OnColor="Green"
+                        ThumbColor="Orange" />
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com vinculação de evento  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Evento e Binding" />
+                    <HorizontalStackLayout Spacing="15">
+                        <Switch Toggled="OnSwitchToggled" x:Name="eventSwitch" />
+                        <Label
+                            Text="Desligado"
+                            VerticalOptions="Center"
+                            x:Name="switchStateLabel" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com binding de duas vias  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Two-Way Binding" />
+                    <HorizontalStackLayout Spacing="15">
+                        <Switch IsToggled="{Binding IsSwitchOn, Mode=TwoWay}" />
+                        <Label Text="{Binding SwitchStatus}" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com visibilidade condicional  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Visibilidade Condicional" />
+                    <HorizontalStackLayout Spacing="15">
+                        <Switch x:Name="visibilitySwitch" />
+                        <Label Text="Mostrar/Esconder" VerticalOptions="Center" />
+                    </HorizontalStackLayout>
+                    <Label
+                        IsVisible="{Binding Source={x:Reference visibilitySwitch}, Path=IsToggled}"
+                        Text="Este conteúdo aparece/desaparece"
+                        TextColor="Purple" />
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com estilo  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Estilo" />
+                    <Switch>
+                        <Switch.Style>
+                            <Style TargetType="Switch">
+                                <Setter Property="OnColor" Value="DarkBlue" />
+                                <Setter Property="ThumbColor" Value="Gold" />
+                                <Setter Property="Scale" Value="1.2" />
+                            </Style>
+                        </Switch.Style>
+                    </Switch>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch desabilitado  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch Desabilitado" />
+                    <Switch IsEnabled="False" />
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com trigger  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Trigger" />
+                    <Switch x:Name="triggerSwitch">
+                        <Switch.Triggers>
+                            <DataTrigger
+                                Binding="{Binding Source={x:Reference triggerSwitch}, Path=IsToggled}"
+                                TargetType="Switch"
+                                Value="True">
+                                <Setter Property="ThumbColor" Value="Red" />
+                            </DataTrigger>
+                        </Switch.Triggers>
+                    </Switch>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Switch com animation  -->
+            <Border
+                Padding="15"
+                Stroke="LightGray"
+                StrokeShape="RoundRectangle 10">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="Switch com Animation" />
+                    <HorizontalStackLayout Spacing="15">
+                        <Switch x:Name="animationSwitch" />
+                        <Label
+                            Opacity="0.5"
+                            Scale="1"
+                            Text="Animar"
+                            VerticalOptions="Center"
+                            x:Name="animationLabel" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
