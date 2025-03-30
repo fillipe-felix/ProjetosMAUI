@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.RadioButtonPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Margin="0,0,0,20"
+                Text="RadioButton Customization Examples" />
+
+            <!--  Basic RadioButton Group  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Basic RadioButton Group" />
+            <HorizontalStackLayout Spacing="15">
+                <RadioButton Content="Option 1" GroupName="BasicGroup" />
+                <RadioButton
+                    Content="Option 2"
+                    GroupName="BasicGroup"
+                    IsChecked="True" />
+                <RadioButton Content="Option 3" GroupName="BasicGroup" />
+            </HorizontalStackLayout>
+
+            <!--  Custom Colors  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Custom Colors" />
+            <VerticalStackLayout Spacing="10">
+                <RadioButton
+                    BorderColor="Red"
+                    Content="Red RadioButton"
+                    GroupName="ColorGroup"
+                    TextColor="Red" />
+                <RadioButton
+                    BorderColor="Blue"
+                    Content="Blue RadioButton"
+                    GroupName="ColorGroup"
+                    TextColor="Blue" />
+                <RadioButton
+                    BorderColor="Green"
+                    Content="Green RadioButton"
+                    GroupName="ColorGroup"
+                    TextColor="Green" />
+            </VerticalStackLayout>
+
+            <!--  Custom Sizes  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Custom Sizes" />
+            <HorizontalStackLayout Spacing="15">
+                <RadioButton
+                    BorderColor="Red"
+                    Content="Small"
+                    GroupName="SizeGroup"
+                    Scale="0.8" />
+                <RadioButton Content="Normal" GroupName="SizeGroup" />
+                <RadioButton
+                    Content="Large"
+                    GroupName="SizeGroup"
+                    Scale="1.5" />
+            </HorizontalStackLayout>
+
+            <!--  Custom Alignment  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Custom Alignment" />
+            <VerticalStackLayout Spacing="10">
+                <RadioButton Content="Left Aligned (Default)" GroupName="AlignmentGroup" />
+                <RadioButton
+                    Content="Right Aligned"
+                    GroupName="AlignmentGroup"
+                    HorizontalOptions="End" />
+                <RadioButton
+                    Content="Center Aligned"
+                    GroupName="AlignmentGroup"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <!--  Disabled State  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="Disabled RadioButtons" />
+            <HorizontalStackLayout Spacing="15">
+                <RadioButton Content="Enabled" GroupName="StateGroup" />
+                <RadioButton
+                    Content="Disabled"
+                    GroupName="StateGroup"
+                    IsEnabled="False" />
+                <RadioButton
+                    Content="Disabled Checked"
+                    GroupName="StateGroup"
+                    IsChecked="True"
+                    IsEnabled="False" />
+            </HorizontalStackLayout>
+
+            <!--  With Custom Visual States (VisualStateManager)  -->
+            <!--  <Label  -->
+            <!--  FontAttributes="Bold"  -->
+            <!--  FontSize="18"  -->
+            <!--  Text="With Visual States" />  -->
+            <!-- <RadioButton Content="Visual State RadioButton" GroupName="VSGroup"> -->
+            <!--     <VisualStateManager.VisualStateGroups> -->
+            <!--         <VisualStateGroup Name="CommonStates"> -->
+            <!--             <VisualState Name="Normal"> -->
+            <!--                 <VisualState.Setters> -->
+            <!--                     <Setter Property="TextColor" Value="Black" /> -->
+            <!--                     <Setter Property="BorderColor" Value="Navy" /> -->
+            <!--                 </VisualState.Setters> -->
+            <!--             </VisualState> -->
+            <!--             <VisualState Name="IsChecked"> -->
+            <!--                 <VisualState.Setters> -->
+            <!--                     <Setter Property="TextColor" Value="Purple" /> -->
+            <!--                     <Setter Property="Opacity" Value="1.0" /> -->
+            <!--                 </VisualState.Setters> -->
+            <!--             </VisualState> -->
+            <!--             <VisualState Name="IsEnabled"> -->
+            <!--                 <VisualState.Setters> -->
+            <!--                     <Setter Property="Opacity" Value="1.0" /> -->
+            <!--                 </VisualState.Setters> -->
+            <!--             </VisualState> -->
+            <!--         </VisualStateGroup> -->
+            <!--     </VisualStateManager.VisualStateGroups> -->
+            <!-- </RadioButton> -->
+
+            <!--  With Borders (Frame)  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="With Borders" />
+            <VerticalStackLayout Spacing="10">
+                <Frame
+                    BorderColor="LightGray"
+                    CornerRadius="8"
+                    Padding="10">
+                    <RadioButton Content="Bordered RadioButton 1" GroupName="BorderGroup" />
+                </Frame>
+                <Frame
+                    BorderColor="LightGray"
+                    CornerRadius="8"
+                    Padding="10">
+                    <RadioButton Content="Bordered RadioButton 2" GroupName="BorderGroup" />
+                </Frame>
+            </VerticalStackLayout>
+
+            <!--  With Images  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="With Images" />
+            <HorizontalStackLayout Spacing="15">
+                <VerticalStackLayout>
+                    <RadioButton GroupName="ImageGroup" />
+                    <Image
+                        HeightRequest="40"
+                        Source="poweron.png"
+                        WidthRequest="40" />
+                    <Label HorizontalOptions="Center" Text=".NET" />
+                </VerticalStackLayout>
+                <VerticalStackLayout>
+                    <RadioButton GroupName="ImageGroup" />
+                    <Image
+                        HeightRequest="40"
+                        Source="poweroff.png"
+                        WidthRequest="40" />
+                    <Label HorizontalOptions="Center" Text="Xamarin" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+
+            <!--  RadioButtons with Custom Handlers  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="With Event Handlers" />
+            <HorizontalStackLayout Spacing="15">
+                <RadioButton
+                    CheckedChanged="OnRadioButtonCheckedChanged"
+                    Content="Click Me"
+                    GroupName="EventGroup" />
+                <Label
+                    Text="Status: Not selected"
+                    VerticalOptions="Center"
+                    x:Name="eventResultLabel" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -128,13 +128,18 @@ public class CategoryRepository
                     Title = "Editor",
                     Description = "Cria uma caixa de entrada de texto com multiplas linhas.",
                     Page = typeof(EditorPage)
-                }
-                ,
+                },
                 new Component
                 {
                     Title = "CheckBox",
                     Description = "Cria uma caixa de marcação",
                     Page = typeof(CheckBoxPage)
+                },
+                new Component
+                {
+                    Title = "RadioButton",
+                    Description = "Cria uma caixa de marcação de escolha unica.",
+                    Page = typeof(RadioButtonPage)
                 }
             }
         });
