@@ -146,6 +146,12 @@ public class CategoryRepository
                     Title = "Switch",
                     Description = "Caixa de marcação booleana",
                     Page = typeof(SwitchPage)
+                },
+                new Component
+                {
+                    Title = "Stepper",
+                    Description = "Cria opções de incremento e decremento.",
+                    Page = typeof(StepperPage)
                 }
             }
         });

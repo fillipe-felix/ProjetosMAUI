@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.StepperPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Text="Exemplos de Customizações do Stepper" />
+            <!--  Stepper padrão  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="1. Stepper Padrão" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Stepper
+                            Increment="1"
+                            Maximum="10"
+                            Minimum="0"
+                            Value="5"
+                            ValueChanged="OnDefaultStepperValueChanged" />
+                        <Label
+                            Text="Valor: 5"
+                            VerticalOptions="Center"
+                            x:Name="defaultStepperValue" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com valor personalizado de incremento  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="2. Stepper com Incremento de 0.5" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Stepper
+                            Increment="0.5"
+                            Maximum="10"
+                            Minimum="0"
+                            Value="2.5"
+                            ValueChanged="OnCustomIncrementStepperValueChanged" />
+                        <Label
+                            Text="Valor: 2.5"
+                            VerticalOptions="Center"
+                            x:Name="customIncrementValue" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com cores personalizadas  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="3. Stepper Colorido" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Stepper
+                            BackgroundColor="#3498db"
+                            Increment="1"
+                            Maximum="10"
+                            Minimum="0"
+                            Value="3"
+                            ValueChanged="OnColorStepperValueChanged" />
+                        <Label
+                            Text="Valor: 3"
+                            VerticalOptions="Center"
+                            x:Name="colorStepperValue" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com visualização gráfica  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="4. Stepper com Visualização Gráfica" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Stepper
+                            Increment="1"
+                            Maximum="5"
+                            Minimum="0"
+                            Value="3"
+                            ValueChanged="OnGraphicStepperValueChanged" />
+                        <HorizontalStackLayout
+                            Spacing="2"
+                            VerticalOptions="Center"
+                            x:Name="graphicDisplay">
+                            <BoxView
+                                Color="#3498db"
+                                HeightRequest="20"
+                                WidthRequest="20" />
+                            <BoxView
+                                Color="#3498db"
+                                HeightRequest="20"
+                                WidthRequest="20" />
+                            <BoxView
+                                Color="#3498db"
+                                HeightRequest="20"
+                                WidthRequest="20" />
+                            <BoxView
+                                Color="LightGray"
+                                HeightRequest="20"
+                                WidthRequest="20" />
+                            <BoxView
+                                Color="LightGray"
+                                HeightRequest="20"
+                                WidthRequest="20" />
+                        </HorizontalStackLayout>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com limite visual e slider  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="5. Stepper com Slider e Limite Visual" />
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                        <Stepper
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Increment="1"
+                            Maximum="10"
+                            Minimum="0"
+                            Value="5"
+                            ValueChanged="OnSliderStepperValueChanged" />
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Text="5/10"
+                            VerticalOptions="Center"
+                            x:Name="sliderStepperValue" />
+                        <ProgressBar
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Progress="0.5"
+                            x:Name="stepperProgress" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com botões personalizados  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="6. Stepper com Botões Personalizados" />
+                    <Grid ColumnDefinitions="Auto, *, Auto">
+                        <Button
+                            BackgroundColor="#e74c3c"
+                            Clicked="OnCustomDecreaseButtonClicked"
+                            CornerRadius="25"
+                            FontSize="20"
+                            Grid.Column="0"
+                            HeightRequest="50"
+                            Text="−"
+                            WidthRequest="50" />
+                        <Label
+                            FontSize="24"
+                            Grid.Column="1"
+                            HorizontalOptions="Center"
+                            Text="4"
+                            VerticalOptions="Center"
+                            x:Name="customButtonValue" />
+                        <Button
+                            BackgroundColor="#2ecc71"
+                            Clicked="OnCustomIncreaseButtonClicked"
+                            CornerRadius="25"
+                            FontSize="20"
+                            Grid.Column="2"
+                            HeightRequest="50"
+                            Text="+"
+                            WidthRequest="50" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com formatação do valor  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="7. Stepper com Valor Formatado" />
+                    <HorizontalStackLayout Spacing="10">
+                        <Stepper
+                            Increment="5"
+                            Maximum="100"
+                            Minimum="0"
+                            Value="25"
+                            ValueChanged="OnFormattedStepperValueChanged" />
+                        <Label
+                            FontSize="18"
+                            Text="25%"
+                            VerticalOptions="Center"
+                            x:Name="formattedValue" />
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+            <!--  Stepper com intervalo dinâmico  -->
+            <Border Padding="10" Stroke="LightGray">
+                <VerticalStackLayout Spacing="10">
+                    <Label FontAttributes="Bold" Text="8. Stepper com Valor Dinâmico de Incremento" />
+                    <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto">
+                        <Stepper
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Increment="1"
+                            Maximum="100"
+                            Minimum="0"
+                            Value="10"
+                            ValueChanged="OnDynamicStepperValueChanged" />
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="0"
+                            Text="Valor: 10"
+                            VerticalOptions="Center"
+                            x:Name="dynamicStepperValue" />
+                        <Slider
+                            Grid.ColumnSpan="2"
+                            Grid.Row="1"
+                            Maximum="10"
+                            Minimum="1"
+                            Value="1"
+                            ValueChanged="OnIncrementSliderValueChanged" />
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            Text="Incremento: 1"
+                            VerticalOptions="Center"
+                            x:Name="incrementValue" />
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
