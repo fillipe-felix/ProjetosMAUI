@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    Title="Exemplos de Sliders"
+    x:Class="AppMAUIGallery.Views.Components.Forms.SliderPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="20">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="24"
+                    HorizontalOptions="Center"
+                    Text="Exemplos de Sliders Personalizados" />
+
+                <!--  Slider básico  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider Básico" />
+                        <Slider
+                            Maximum="100"
+                            Minimum="0"
+                            Value="50" />
+
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="Valor: 50"
+                            x:Name="BasicValueLabel" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider com cores personalizadas  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider com Cores Personalizadas" />
+                        <Slider
+                            Maximum="100"
+                            MaximumTrackColor="Gray"
+                            Minimum="0"
+                            MinimumTrackColor="Orange"
+                            ThumbColor="Red"
+                            Value="25" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider com passos (StepSize)  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider com Valor em Passos" />
+                        <Slider
+                            Maximum="100"
+                            MaximumTrackColor="LightGray"
+                            Minimum="0"
+                            MinimumTrackColor="Green"
+                            Value="20" />
+
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="Valor: 20 (passos de 10)"
+                            x:Name="StepValueLabel" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider com valor exibido em tempo real  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider com Valor em Tempo Real" />
+                        <Slider
+                            Maximum="1"
+                            MaximumTrackColor="#ecf0f1"
+                            Minimum="0"
+                            MinimumTrackColor="#3498db"
+                            ThumbColor="#2980b9"
+                            Value="0.5"
+                            x:Name="RealTimeSlider" />
+
+                        <Label
+                            HorizontalOptions="Center"
+                            Text="Opacidade: 50%"
+                            x:Name="RealTimeLabel" />
+
+                        <BoxView
+                            Color="Purple"
+                            HeightRequest="50"
+                            HorizontalOptions="Center"
+                            Opacity="{Binding Source={x:Reference RealTimeSlider}, Path=Value}"
+                            WidthRequest="200" />
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider horizontal com valores nos extremos  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider com Valores nos Extremos" />
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <Label Grid.Column="0" Text="0%" />
+
+                            <Slider
+                                Grid.Column="1"
+                                Maximum="100"
+                                MaximumTrackColor="#D3D3D3"
+                                Minimum="0"
+                                MinimumTrackColor="#FF5733"
+                                Value="75" />
+
+                            <Label Grid.Column="2" Text="100%" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider vertical usando RotationAngle  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider Vertical (usando rotação)" />
+                        <Grid HeightRequest="200" HorizontalOptions="Center">
+                            <Slider
+                                Maximum="100"
+                                Minimum="0"
+                                MinimumTrackColor="#9B59B6"
+                                ThumbColor="#8E44AD"
+                                Value="50"
+                                WidthRequest="200" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider duplo (simulação usando 2 sliders)  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Simulação de Slider com Dois Valores" />
+                        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="5">
+                            <Label Grid.Row="0" Text="Valor Mínimo" />
+                            <Slider
+                                Grid.Row="0"
+                                Maximum="100"
+                                MaximumTrackColor="#27AE60"
+                                Minimum="0"
+                                MinimumTrackColor="LightGray"
+                                ThumbColor="#2ECC71"
+                                Value="20"
+                                x:Name="MinValueSlider" />
+
+                            <Label Grid.Row="1" Text="Valor Máximo" />
+                            <Slider
+                                Grid.Row="1"
+                                Maximum="100"
+                                MaximumTrackColor="LightGray"
+                                Minimum="0"
+                                MinimumTrackColor="#27AE60"
+                                ThumbColor="#2ECC71"
+                                Value="80"
+                                x:Name="MaxValueSlider" />
+
+                            <Label
+                                Grid.Row="2"
+                                HorizontalOptions="Center"
+                                Text="Intervalo selecionado: 20 - 80"
+                                x:Name="RangeLabel" />
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!--  Slider com aparência personalizada usando VisualStateManager  -->
+                <Border
+                    Padding="10"
+                    Stroke="LightGray"
+                    StrokeThickness="1">
+                    <VerticalStackLayout Spacing="10">
+                        <Label FontAttributes="Bold" Text="Slider com Estados Visuais" />
+                        <Slider
+                            Maximum="100"
+                            Minimum="0"
+                            ThumbColor="#1ABC9C"
+                            Value="50">
+                            <Slider.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Source={RelativeSource Self}, Path=Value}"
+                                    TargetType="Slider"
+                                    Value="100">
+                                    <Setter Property="ThumbColor" Value="#FF5733" />
+                                </DataTrigger>
+                            </Slider.Triggers>
+                        </Slider>
+                        <Label
+                            FontSize="12"
+                            Text="Dica: O controle muda de cor quando atinge o valor máximo"
+                            TextColor="Gray" />
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

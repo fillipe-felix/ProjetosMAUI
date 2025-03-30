@@ -152,6 +152,12 @@ public class CategoryRepository
                     Title = "Stepper",
                     Description = "Cria opções de incremento e decremento.",
                     Page = typeof(StepperPage)
+                },
+                new Component
+                {
+                    Title = "Slider",
+                    Description = "Cria barra que faz incremento e decremento.",
+                    Page = typeof(SliderPage)
                 }
             }
         });
