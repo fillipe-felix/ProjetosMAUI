@@ -164,6 +164,12 @@ public class CategoryRepository
                     Title = "TimePicker",
                     Description = "Seleção da hora e minuto.",
                     Page = typeof(TimePickerPage)
+                },
+                new Component
+                {
+                    Title = "DatePicker",
+                    Description = "Seleção da data.",
+                    Page = typeof(DatePickerPage)
                 }
             }
         });
