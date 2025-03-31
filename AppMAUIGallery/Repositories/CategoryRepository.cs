@@ -176,6 +176,12 @@ public class CategoryRepository
                     Title = "SearchBar",
                     Description = "Campo de entrada de texto para pesquisa.",
                     Page = typeof(SearchBarPage)
+                },
+                new Component
+                {
+                    Title = "Picker",
+                    Description = "Selecionar de uma lista",
+                    Page = typeof(PickerPage)
                 }
             }
         });

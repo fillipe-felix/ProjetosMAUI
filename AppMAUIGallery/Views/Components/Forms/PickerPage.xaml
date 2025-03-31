@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Components.Forms.PickerPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                Text="Customizações do Picker" />
+
+            <!--  Picker básico com borda arredondada  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com Border arredondado" />
+                <Border
+                    Padding="0"
+                    Stroke="#2B0B98"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="2">
+                    <Picker
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        SelectedIndexChanged="BasicPicker_SelectedIndexChanged"
+                        TextColor="#2B0B98"
+                        Title="Selecione um item">
+                        <Picker.Items>
+                            <x:String>Item 1</x:String>
+                            <x:String>Item 2</x:String>
+                            <x:String>Item 3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+            </VerticalStackLayout>
+
+            <!--  Picker com efeito de sombra  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com sombra" />
+                <Border
+                    Padding="0"
+                    Stroke="#DDDDDD"
+                    StrokeShape="RoundRectangle 8"
+                    StrokeThickness="1">
+                    <Border.Shadow>
+                        <Shadow
+                            Brush="Black"
+                            Offset="0,2"
+                            Opacity="0.2"
+                            Radius="4" />
+                    </Border.Shadow>
+                    <Picker
+                        BackgroundColor="Transparent"
+                        SelectedIndexChanged="ShadowPicker_SelectedIndexChanged"
+                        Title="Selecione uma opção"
+                        TitleColor="Gray">
+                        <Picker.Items>
+                            <x:String>Opção A</x:String>
+                            <x:String>Opção B</x:String>
+                            <x:String>Opção C</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+            </VerticalStackLayout>
+
+            <!--  Picker com ícone customizado  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com ícone" />
+                <Grid ColumnDefinitions="*,Auto" RowDefinitions="*">
+                    <Border
+                        Grid.ColumnSpan="2"
+                        Padding="0"
+                        Stroke="#CCCCCC"
+                        StrokeShape="RoundRectangle 8"
+                        StrokeThickness="1">
+                        <Picker
+                            BackgroundColor="Transparent"
+                            Margin="10,0,40,0"
+                            SelectedIndexChanged="CountryPicker_SelectedIndexChanged"
+                            Title="Selecione um país"
+                            x:Name="CountryPicker">
+                            <Picker.Items>
+                                <x:String>Brasil</x:String>
+                                <x:String>Estados Unidos</x:String>
+                                <x:String>Portugal</x:String>
+                                <x:String>Canadá</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Border>
+                    <Image
+                        Grid.Column="1"
+                        HeightRequest="20"
+                        HorizontalOptions="End"
+                        Margin="0,0,15,0"
+                        Source="dotnet_bot.png"
+                        VerticalOptions="Center"
+                        WidthRequest="20" />
+                </Grid>
+            </VerticalStackLayout>
+
+            <!--  Picker com gradiente  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com gradiente" />
+                <Border Padding="0" StrokeShape="RoundRectangle 12">
+                    <Border.Stroke>
+                        <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                            <GradientStop Color="#6A11CB" Offset="0.0" />
+                            <GradientStop Color="#2575FC" Offset="1.0" />
+                        </LinearGradientBrush>
+                    </Border.Stroke>
+                    <Border.StrokeThickness>2</Border.StrokeThickness>
+                    <Picker
+                        BackgroundColor="Transparent"
+                        FontAttributes="Bold"
+                        Margin="10,0"
+                        SelectedIndexChanged="GradientPicker_SelectedIndexChanged"
+                        TextColor="DarkSlateBlue"
+                        Title="Escolha uma cor">
+                        <Picker.Items>
+                            <x:String>Vermelho</x:String>
+                            <x:String>Azul</x:String>
+                            <x:String>Verde</x:String>
+                            <x:String>Roxo</x:String>
+                            <x:String>Laranja</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+            </VerticalStackLayout>
+
+            <!--  Picker com título flutuante customizado  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com efeito de label flutuante" />
+                <Grid Padding="0" RowDefinitions="Auto,Auto">
+                    <Label
+                        BackgroundColor="White"
+                        FontSize="12"
+                        HorizontalOptions="Start"
+                        IsVisible="False"
+                        Margin="12,0,0,0"
+                        Padding="5,0"
+                        Text="Selecionar categoria"
+                        TextColor="#512BD4"
+                        ZIndex="1"
+                        x:Name="FloatingLabel" />
+                    <Border
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Padding="0"
+                        Stroke="#512BD4"
+                        StrokeShape="RoundRectangle 8"
+                        StrokeThickness="1.5">
+                        <Picker
+                            BackgroundColor="Transparent"
+                            Focused="CategoryPicker_Focused"
+                            Margin="10,0"
+                            SelectedIndexChanged="CategoryPicker_SelectedIndexChanged"
+                            Title="Selecionar categoria"
+                            TitleColor="#512BD4"
+                            Unfocused="CategoryPicker_Unfocused"
+                            x:Name="CategoryPicker">
+                            <Picker.Items>
+                                <x:String>Eletrônicos</x:String>
+                                <x:String>Roupas</x:String>
+                                <x:String>Alimentos</x:String>
+                                <x:String>Livros</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </Border>
+                </Grid>
+            </VerticalStackLayout>
+
+            <!--  Picker animado com detalhes visuais  -->
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Picker com animação de seleção" />
+                <Border
+                    BackgroundColor="#F8F8F8"
+                    Padding="0"
+                    Stroke="#CCCCCC"
+                    StrokeShape="RoundRectangle 10"
+                    StrokeThickness="1"
+                    x:Name="AnimatedBorder">
+                    <Picker
+                        BackgroundColor="Transparent"
+                        Focused="AnimatedPicker_Focused"
+                        SelectedIndexChanged="AnimatedPicker_SelectedIndexChanged"
+                        Title="Escolha uma opção"
+                        Unfocused="AnimatedPicker_Unfocused"
+                        x:Name="AnimatedPicker">
+                        <Picker.Items>
+                            <x:String>Opção 1</x:String>
+                            <x:String>Opção 2</x:String>
+                            <x:String>Opção 3</x:String>
+                        </Picker.Items>
+                    </Picker>
+                </Border>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
