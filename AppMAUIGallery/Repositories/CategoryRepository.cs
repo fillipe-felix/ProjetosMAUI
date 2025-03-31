@@ -170,6 +170,12 @@ public class CategoryRepository
                     Title = "DatePicker",
                     Description = "Seleção da data.",
                     Page = typeof(DatePickerPage)
+                },
+                new Component
+                {
+                    Title = "SearchBar",
+                    Description = "Campo de entrada de texto para pesquisa.",
+                    Page = typeof(SearchBarPage)
                 }
             }
         });
