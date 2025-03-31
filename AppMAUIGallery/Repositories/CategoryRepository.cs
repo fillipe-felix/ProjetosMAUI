@@ -158,6 +158,12 @@ public class CategoryRepository
                     Title = "Slider",
                     Description = "Cria barra que faz incremento e decremento.",
                     Page = typeof(SliderPage)
+                },
+                new Component
+                {
+                    Title = "TimePicker",
+                    Description = "Seleção da hora e minuto.",
+                    Page = typeof(TimePickerPage)
                 }
             }
         });
