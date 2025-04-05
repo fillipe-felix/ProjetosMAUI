@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    BackgroundColor="White"
+    x:Class="AppMAUIGallery.Views.Cells.TextCellPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <TableView>
+                <TableSection Title="Lista de colaboradores">
+                    <TextCell
+                        Detail="Idade: 32, Cargo: Analista de Sistemas"
+                        DetailColor="Gray"
+                        Text="Fillipe Felix"
+                        TextColor="Blue" />
+                </TableSection>
+            </TableView>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="24"
+                HorizontalOptions="Center"
+                Margin="0,0,0,15"
+                Text="Exemplos de TableView Personalizados" />
+
+            <!--  TableView Básico com Seções  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Text="TableView com Seções Básicas" />
+            <TableView Intent="Settings">
+                <TableRoot>
+                    <TableSection Title="Configurações Pessoais">
+                        <TextCell Detail="usuarioexemplo" Text="Nome de Usuário" />
+                        <SwitchCell
+                            On="True"
+                            OnChanged="SwitchCell_OnChanged"
+                            Text="Notificações" />
+                    </TableSection>
+                    <TableSection Title="Configurações do Aplicativo">
+                        <TextCell Detail="1.0.0" Text="Versão" />
+                        <EntryCell
+                            Completed="EntryCell_Completed"
+                            Label="E-mail"
+                            Placeholder="Digite seu e-mail" />
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!--  TableView com ViewCells Customizadas  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Margin="0,15,0,0"
+                Text="TableView com Células Personalizadas" />
+            <TableView Intent="Menu">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <Grid
+                                ColumnDefinitions="Auto,*,Auto"
+                                Padding="10"
+                                RowDefinitions="Auto,Auto">
+                                <Border
+                                    BackgroundColor="#4CAF50"
+                                    HeightRequest="50"
+                                    HorizontalOptions="Center"
+                                    StrokeShape="RoundRectangle 50"
+                                    StrokeThickness="0"
+                                    VerticalOptions="Center"
+                                    WidthRequest="50">
+                                    <Label
+                                        FontAttributes="Bold"
+                                        HorizontalOptions="Center"
+                                        Text="JD"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </Border>
+                                <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                                    <Label FontAttributes="Bold" Text="João da Silva" />
+                                    <Label
+                                        FontSize="14"
+                                        Text="Desenvolvedor Mobile"
+                                        TextColor="Gray" />
+                                </VerticalStackLayout>
+                                <Image
+                                    Grid.Column="2"
+                                    HeightRequest="30"
+                                    HorizontalOptions="End"
+                                    Source="dotnet_bot.png"
+                                    WidthRequest="30" />
+                            </Grid>
+                        </ViewCell>
+
+                        <ViewCell Tapped="CustomViewCell_Tapped">
+                            <Border
+                                BackgroundColor="#F8F8F8"
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="1">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout>
+                                        <Label FontAttributes="Bold" Text="Item com Ação de Toque" />
+                                        <Label
+                                            FontSize="14"
+                                            Text="Toque para detalhes"
+                                            TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                    <Label
+                                        FontFamily="FontAwesome"
+                                        Grid.Column="1"
+                                        Text="&#xf054;"
+                                        TextColor="#007ACC"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!--  TableView com Células Interativas  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Margin="0,15,0,0"
+                Text="TableView com Células Interativas" />
+            <TableView Intent="Data">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <Border
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 8"
+                                StrokeThickness="1">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <VerticalStackLayout>
+                                        <Label FontAttributes="Bold" Text="Status do Projeto" />
+                                        <ProgressBar
+                                            Margin="0,10,0,0"
+                                            Progress="0.7"
+                                            ProgressColor="#007ACC" />
+                                        <Label
+                                            FontSize="12"
+                                            HorizontalOptions="End"
+                                            Text="70% Concluído"
+                                            TextColor="Gray" />
+                                    </VerticalStackLayout>
+                                    <Button
+                                        BackgroundColor="#007ACC"
+                                        Clicked="ProjectDetailsButton_Clicked"
+                                        CornerRadius="20"
+                                        FontSize="12"
+                                        Grid.Column="1"
+                                        HeightRequest="40"
+                                        HorizontalOptions="End"
+                                        Text="Detalhes"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <Border
+                                BackgroundColor="#FFF8E1"
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#FFB74D"
+                                StrokeShape="RoundRectangle 8"
+                                StrokeThickness="1">
+                                <VerticalStackLayout>
+                                    <Label
+                                        FontAttributes="Bold"
+                                        Text="Notificação Importante"
+                                        TextColor="#F57C00" />
+                                    <Label Text="Este item requer sua atenção" TextColor="#F57C00" />
+                                    <HorizontalStackLayout
+                                        HorizontalOptions="End"
+                                        Margin="0,10,0,0"
+                                        Spacing="10">
+                                        <Button
+                                            BackgroundColor="Transparent"
+                                            BorderColor="#F57C00"
+                                            BorderWidth="1"
+                                            Clicked="IgnoreButton_Clicked"
+                                            CornerRadius="20"
+                                            FontSize="12"
+                                            Text="Ignorar"
+                                            TextColor="#F57C00" />
+                                        <Button
+                                            BackgroundColor="#F57C00"
+                                            Clicked="ResolveButton_Clicked"
+                                            CornerRadius="20"
+                                            FontSize="12"
+                                            Text="Resolver"
+                                            TextColor="White" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!--  TableView com Estilos Customizados  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Margin="0,15,0,0"
+                Text="TableView com Estilos Personalizados" />
+            <TableView Intent="Form">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <Border
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 12,0,0,12"
+                                StrokeThickness="1">
+                                <Grid ColumnDefinitions="30,*" RowSpacing="10">
+                                    <Border
+                                        BackgroundColor="#6200EE"
+                                        Grid.RowSpan="2"
+                                        HeightRequest="40"
+                                        HorizontalOptions="Start"
+                                        StrokeShape="Rectangle"
+                                        WidthRequest="4" />
+                                    <Label
+                                        FontAttributes="Bold"
+                                        Grid.Column="1"
+                                        Text="Item Destacado"
+                                        TextColor="#6200EE" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Grid.Row="1"
+                                        Text="Com detalhe personalizado"
+                                        TextColor="Gray" />
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+
+                        <ViewCell>
+                            <Border
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 0,0,12,12"
+                                StrokeThickness="1">
+                                <Grid ColumnDefinitions="Auto,*,Auto">
+                                    <CheckBox
+                                        CheckedChanged="Checkbox_CheckedChanged"
+                                        Color="#6200EE"
+                                        HeightRequest="10"
+                                        IsChecked="True"
+                                        WidthRequest="10" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Text="Item Selecionável"
+                                        VerticalOptions="Center" />
+                                    <Border
+                                        BackgroundColor="#E6E0F8"
+                                        Grid.Column="2"
+                                        Padding="8,3"
+                                        StrokeShape="RoundRectangle 15"
+                                        StrokeThickness="0">
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontSize="12"
+                                            Text="Novo"
+                                            TextColor="#6200EE" />
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+
+            <!--  TableView com Células Expandíveis  -->
+            <Label
+                FontAttributes="Bold"
+                FontSize="18"
+                Margin="0,15,0,0"
+                Text="TableView com Células Expansíveis" />
+            <TableView Intent="Menu">
+                <TableRoot>
+                    <TableSection>
+                        <ViewCell>
+                            <Border
+                                Margin="5"
+                                Padding="15"
+                                Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 10"
+                                StrokeThickness="1">
+                                <VerticalStackLayout Spacing="10">
+                                    <Grid ColumnDefinitions="*,Auto">
+                                        <Label FontAttributes="Bold" Text="Detalhes Expansíveis" />
+                                        <Button
+                                            BackgroundColor="Transparent"
+                                            Clicked="ExpandButton_Clicked"
+                                            FontSize="12"
+                                            Grid.Column="1"
+                                            Text="Expandir"
+                                            TextColor="#007ACC"
+                                            x:Name="expandButton" />
+                                    </Grid>
+                                    <VerticalStackLayout
+                                        IsVisible="false"
+                                        Spacing="10"
+                                        x:Name="expandableContent">
+                                        <Label Text="Conteúdo adicional que pode ser expandido ou recolhido." TextColor="Gray" />
+                                        <Border
+                                            Padding="10"
+                                            Stroke="#E0E0E0"
+                                            StrokeShape="RoundRectangle 5"
+                                            StrokeThickness="1">
+                                            <VerticalStackLayout Spacing="5">
+                                                <Label FontAttributes="Bold" Text="Subitem 1" />
+                                                <Label
+                                                    FontSize="12"
+                                                    Text="Descrição do subitem 1"
+                                                    TextColor="Gray" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                        <Border
+                                            Padding="10"
+                                            Stroke="#E0E0E0"
+                                            StrokeShape="RoundRectangle 5"
+                                            StrokeThickness="1">
+                                            <VerticalStackLayout Spacing="5">
+                                                <Label FontAttributes="Bold" Text="Subitem 2" />
+                                                <Label
+                                                    FontSize="12"
+                                                    Text="Descrição do subitem 2"
+                                                    TextColor="Gray" />
+                                            </VerticalStackLayout>
+                                        </Border>
+                                    </VerticalStackLayout>
+                                </VerticalStackLayout>
+                            </Border>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

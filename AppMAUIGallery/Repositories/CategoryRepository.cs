@@ -1,4 +1,5 @@
 ﻿using AppMAUIGallery.Models;
+using AppMAUIGallery.Views.Cells;
 using AppMAUIGallery.Views.Components.Forms;
 using AppMAUIGallery.Views.Components.Mains;
 using AppMAUIGallery.Views.Components.Visuals;
@@ -182,6 +183,20 @@ public class CategoryRepository
                     Title = "Picker",
                     Description = "Selecionar de uma lista",
                     Page = typeof(PickerPage)
+                }
+            }
+        });
+        
+        categories.Add(new Category
+        {
+            Name = "Células",
+            Components = new List<Component>
+            {
+                new Component
+                {
+                    Title = "TextCell",
+                    Description = "Apresenta até 2 labels onde uma é destinada ao titulo e outra destinada a descrição",
+                    Page = typeof(TextCellPage)
                 }
             }
         });
